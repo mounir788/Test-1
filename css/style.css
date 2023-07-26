@@ -908,41 +908,69 @@ footer {
     width: 190px;
     height: 41px;
   }
+  header .story-header {
+    background-color: var(--purple01);
+  }
   .story .container {
     padding-bottom: 50px;
+    margin: 0;
   }
   .story-cards {
-    padding-top: 30px;
-    margin-bottom: 30px;
+    padding-top: 0;
+    margin: 0 15px;
+  }
+  .story-cards .img {
+    height: 448px;
+    position: static;
+    transform: translate(0);
   }
   .story-cards::before {
     top: 30px;
-    height: calc(100% - 30px);
+    height: 90%;
+  }
+  .story-cards .content {
+    grid-template-columns: none;
+    position: relative;
   }
   .story-cards .content h2 {
     font-size: 14px;
+    color: #3f3d3d;
   }
-  .story-cards .content article {
-    margin: 0 30px 0 10px;
+  .story-cards .content article,
+  .story-cards .content:nth-child(2) article {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    width: 73%;
+    height: 125px;
+    padding: 20px;
+    display: grid;
+    place-content: center;
+    z-index: 5;
+  }
+  .story-cards .content:nth-child(1) article {
+    background: rgba(199, 178, 178, 0.8);
   }
   .story-cards .content:nth-child(2) article {
-    margin: 0 10px 0 30px;
+    background: rgba(232, 218, 218, 0.8);
+  }
+  .story-cards .content:nth-child(3) article {
+    background: rgba(219, 208, 201, 0.8);
   }
   .story-cards .content p {
     font-size: 10px;
     width: auto;
     margin: 10px 0;
+    color: #3f3d3d;
   }
-  /* .story-cards .img {
-    width: 170px;
-    height: 170px;
-  } */
   .story-card,
   .content:nth-child(2) .story-card {
-    height: 220px;
+    height: auto;
+    margin-bottom: 100px;
   }
   .story-card::before {
-    width: 60%;
+    display: none;
   }
   .story-cards .img {
     right: 12%;
@@ -964,12 +992,15 @@ footer {
   .story-grid {
     row-gap: 12px;
   }
-  .xxl {
-    height: 267px;
+  .story-grid div {
+    height: 340px;
+  }
+  .story-grid .xxl {
+    height: 355px;
   }
   .story-article {
-    width: 80%;
-    padding: 40px 0;
+    width: 85%;
+    padding: 30px 0;
   }
   .story-article h2 {
     font-size: 16px;
@@ -981,6 +1012,9 @@ footer {
   .story-article p,
   .story-article .btn-2 {
     font-size: 13px;
+  }
+  .story-footer {
+    background: var(--purple02);
   }
   .products .container {
     margin: 0;
